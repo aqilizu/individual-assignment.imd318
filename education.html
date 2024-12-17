@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Aqil's World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+
+         /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2d3b48, #1f2732);
+            color: #f0f0f0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+       /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease-in-out; /* Smooth background transition */
+        }
+
+        nav:hover {
+            background-color: rgba(0, 0, 0, 0.95); /* Darker nav on hover */
+        }
+
+        .menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #FFD700;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .menu a {
+            color: #f0f0f0;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .menu a:hover {
+            color: #f5a623;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px #f5a623;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 6rem 2rem 2rem 2rem;
+            text-align: center;
+            background-color: #222;
+            animation: fadeIn 1.5s ease-out; /* Fade-in effect */
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #f5a623;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Education Section Styles */
+        section {
+            padding: 3rem 2rem;
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        section h2 {
+            color: #FFD700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .education-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .education-timeline div {
+            background-color: #333;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+            transform: scale(0.98);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .education-timeline div:hover {
+            transform: scale(1.02);
+        }
+
+        .education-timeline h3 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .education-timeline p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .education-timeline img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin: 1rem 0;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .education-timeline img:hover {
+            transform: scale(1.1);
+        }
+
+        section video {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 1rem 0;
+            animation: fadeIn 2s ease-out;
+        }
+
+      /* Footer Styles */
+        footer {
+            background-color: #202020;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 1.5rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        
+}
+     #backToTop {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    background-color: #f5a623;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #ffd700;
+    transform: scale(1.1);
+}
+
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Qelzu Website</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="friend.html">Friends</a>
+            <div class="dropdown">
+                <a href="education.html">Education</a>
+                <div class="dropdown-content">
+                    <a href="#primary-school">Primary School</a>
+                    <a href="#high-school">High School</a>
+                    <a href="#university">University</a>
+                </div>
+            </div>
+            <a href="family.html">Family</a>
+            <a href="sport.html">Sport</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Education</h1>
+    </header>
+
+    <section>
+        <h2>My Educational Journey</h2>
+        <p>Throughout my life, education has been a pivotal part of my growth. From my early years in school to my time at university, each step has shaped who I am today.</p>
+        
+        <div class="education-timeline">
+            <!-- Primary School -->
+            <div id="primary-school">
+                <h3>Primary School</h3>
+                <img src="image/edu4.jpg" alt="Primary School">
+                <p>Sekolah Rendah Agama Ar-Ridhwaniah, located in Bagan Serai, Perak, is where I completed my primary education. This school combines religious studies with academic subjects, making it a unique place to learn and grow. We studied Quranic studies, Arabic, Fiqh, and other Islamic teachings, alongside Mathematics, Science, and Bahasa Malaysia. The school instilled strong discipline, moral values, and a sense of community, shaping us for both religious and academic success in the future.</p>
+            </div>
+
+            <!-- High School -->
+            <div id="high-school">
+                <h3>High School</h3>
+                <img src="image/edu2.jpg" alt="High School">
+                <p>SABK Maahad Al-Tarbiah Al-Islamiah is likely a Sekolah Agama Bantuan Kerajaan (SABK) in Malaysia, it appears to be an Islamic educational institution in Malaysia under the SABK system. These schools typically emphasize Islamic teachings alongside academic subjects, preparing students for both religious and mainstream education pathways.</p>
+            </div>
+
+            <!-- University -->
+            <div id="university">
+                <h3>University</h3>
+                <img src="image/edu3.png" alt="University">
+                <p>Universiti Teknologi MARA (UiTM) is one of Malaysia's largest public universities, offering a wide range of programs at diploma, degree, and postgraduate levels. It focuses on providing education and skills development, particularly for Bumiputera students, and has multiple campuses across the country. UiTM is known for its emphasis on practical skills and professional expertise.</p>
+            </div>
+       
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Aqil's Personal Website. All Rights Reserved.</p>
+    </footer>
+</footer>
+  <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script>
+        const backToTopButton = document.getElementById("backToTop");
+
+        // Show the button when scrolling down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+
+        // Smooth scroll to the top when the button is clicked
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</footer>
+</body>
+</html>
