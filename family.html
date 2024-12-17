@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family - Aqil's World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2d3b48, #1f2732);
+            color: #f0f0f0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+
+       /* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow to the nav bar */
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #FFD700;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem; /* Space between menu items */
+}
+
+.menu a {
+    color: #f0f0f0; /* Text color */
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase; /* Makes the text uppercase */
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.menu a:hover {
+    color: #f5a623; /* Changes color on hover */
+    transform: scale(1.1); /* Slightly enlarges the link */
+    text-shadow: 0 0 10px #f5a623; /* Adds glowing text effect */
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative; /* Allows positioning of dropdown content */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the parent */
+    background-color: #333; /* Dropdown background */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adds shadow */
+    z-index: 1; /* Ensures dropdown appears on top */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Shows the dropdown on hover */
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Makes each link take up full width */
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd; /* Changes background on hover */
+}
+        /* Header Styles */
+        header {
+            padding: 6rem 2rem 2rem 2rem; /* Adjust padding for header */
+            text-align: center;
+            background-color: #222;
+        }
+
+ header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #f5a623;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+        /* Section Styles */
+        section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+            margin: 1rem 0;
+        }
+
+        .description {
+            margin: 2rem 0;
+        }
+
+        .box {
+            background-color: #111;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem auto;
+            max-width: 800px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
+        }
+
+        .box img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .box .text {
+            text-align: left;
+            flex: 1;
+        }
+
+        .sibling-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sibling {
+            background-color: #111;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            max-width: 200px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .sibling:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
+        }
+
+        .sibling img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+       /* Footer Styles */
+        footer {
+            background-color: #202020;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 1.5rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Qelzu Website</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="friend.html">Friends</a>
+            <div class="dropdown">
+                <a href="education.html">Education</a>
+                <div class="dropdown-content">
+                    <a href="education.html#primary-school">Primary School</a>
+                    <a href="education.html#high-school">High School</a>
+                    <a href="education.html#university">University</a>
+                </div>
+            </div>
+            <a href="family.html">Family</a>
+            <a href="sport.html">Sport</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+
+    <header>
+        <h1>Family</h1>
+    </header>
+<br>
+ <audio controls> 
+        <source src="audio/music2.mp3" type="audio/mp3">
+    </audio>
+</section>
+
+    <section>
+        <h2>My Family</h2>
+        <p>Family is everything to me. The love, support, and memories we share are the foundation of who I am today.</p>
+        <img src="image/fam1.jpg" alt="Family Landscape Photo" style="height: 300px; width: auto;">
+
+        <!-- Parents Section -->
+        <div class="description">
+            <h3>My Parents</h3>
+            <div class="box">
+                <img src="image/fam2.jpg" alt="My Parents Photo">
+                <div class="text">
+                    <p>These are my parents.My father's name is Jaafar bin Saad, and my mother's name is Mukminah binti Tarmizi. They are both 61 years old and have spent their lives working as teachers.Both of them come from Perak. My father is a strict and disciplined person, always emphasizing the importance of responsibility and hard work. In contrast, my mother is incredibly gentle and kind hearted, offering a nurturing presence in everything she does. ,  </p>
+                </div>
+            </div>
+        </div>
+
+<style>
+    /* Sibling Gallery Styles */
+    .sibling-gallery {
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap to the next line */
+        justify-content: center;
+        gap: 1.5rem; /* Space between sibling items */
+        margin-top: 2rem;
+    }
+
+    .sibling {
+        text-align: center;
+        max-width: 200px; /* Limit the width of each sibling block */
+    }
+
+    .sibling img {
+        width: 150px; /* Fixed width */
+        height: 150px; /* Fixed height */
+        object-fit: cover; /* Ensures the image fits the dimensions without distortion */
+        border-radius: 10px; /* Optional: Adds rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
+        transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+    }
+
+    .sibling img:hover {
+        transform: scale(1.1); /* Slight zoom on hover */
+    }
+
+    .sibling p {
+        margin-top: 0.5rem;
+        color: #FFD700; /* Gold text for sibling descriptions */
+        font-size: 1rem;
+    }
+	audio {
+		width: 40%;
+		display: block;
+		margin: 0 auto;
+</style>
+
+<!-- Siblings Section -->
+<div class="description">
+    <h3>My Siblings</h3>
+    <div class="sibling-gallery">
+        <div class="sibling">         
+            <img src="image/fam3.jpg" alt="Sibling 1" class="sibling-img">
+            <p>This is my first sibling, Jannatul Ajilah. She’s 31 years old, a teacher, strict but kind, loves to tell stories, and is very careful with details.</p>
+        </div>
+        <div class="sibling">
+            <img src="image/fam4.jpg" alt="Sibling 2" class="sibling-img">
+            <p>This is my second sibling, Khairul Naim. He’s 30 years old, a teacher who loves to joke around, has great sportsmanship, and always thinks outside the box.</p>
+        </div>
+        <div class="sibling">
+            <img src="image/fam5.jpg" alt="Sibling 3" class="sibling-img">
+            <p>This is my third sibling, Nur Saaidah. She’s 28 years old, a teacher who is gentle, very disciplined, and loves to cook.</p>
+        </div>
+        <div class="sibling">
+            <img src="image/fam6.jpg" alt="Sibling 4" class="sibling-img">
+            <p>This is my fourth sibling, Anis Solehah. She’s 27 years old, a teacher who is very independent, sometimes forgetful, but has a kind heart.</p>
+        </div>
+        <div class="sibling">
+            <img src="image/fam8.jpg" alt="Sibling 5" class="sibling-img">
+            <p>This is my fifth sibling, Nasrul Hafiz. He’s 25 years old, studying Al-Quran and Islamic texts. He is strict, has great communication skills, a good sense of humor, and strong sportsmanship.</p>
+        </div>
+        <div class="sibling">
+            <img src="image/fam7.jpg" alt="Sibling 6" class="sibling-img">
+            <p>This is my sixth sibling, Ain Najhan.She's 24 years old, she’s studying education and is the family’s source of joy and laughter. Always curious and full of questions.</p>
+        </div>
+        <div class="sibling">
+            <img src="image/aqil6.jpg" alt="Sibling 7" class="sibling-img">
+            <p>"I am the youngest child in my family. Growing up, I was surrounded by older siblings who have always been supportive and protective. Being the youngest has given me a unique perspective on life, as I've learned a lot from my siblings' experiences while also having the privilege of being cared for and guided by them."</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.sibling-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.sibling {
+    text-align: center;
+    max-width: 300px; /* Adjust as needed */
+}
+
+.sibling-img {
+    width: 150px; /* Adjust width here */
+    height: 150px; /* Adjust height here */
+    object-fit: cover; /* Ensures images maintain aspect ratio and fill the box */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    border: 2px solid #ccc; /* Optional: adds a border */
+}
+     #backToTop {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    background-color: #f5a623;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #ffd700;
+    transform: scale(1.1);
+}
+{
+</style>
+  </section>
+
+    
+</footer>
+  <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script>
+        const backToTopButton = document.getElementById("backToTop");
+
+        // Show the button when scrolling down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+
+        // Smooth scroll to the top when the button is clicked
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</footer>
+
+
+
+   <footer>
+        <p>© 2024 Aqil's Personal Website. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
