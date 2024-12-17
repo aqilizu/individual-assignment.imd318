@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Aqil's World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2d3b48, #1f2732);
+            color: #f0f0f0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #FFD700;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .menu a {
+            color: #f0f0f0;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .menu a:hover {
+            color: #f5a623;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px #f5a623;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 6rem 2rem 2rem;
+            text-align: center;
+            background-color: #202020;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #f5a623;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        section:nth-child(even) {
+            animation-delay: 0.5s;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ddd;
+            text-align: justify;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Video Section Styles */
+        .video-section {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #f5a623;
+            margin-bottom: 1rem;
+        }
+
+        .video-section video {
+            width: 200%;
+            max-width: 300px;
+	    height : 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .video-section video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #202020;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 1.5rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+        }
+/* Box around the about me section */
+.about-box {
+    background-color: rgba(255, 165, 0, 0.1); /* Light orange background */
+    border: 2px solid #f5a623; /* Orange border */
+    padding: 2rem;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.about-box:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.about-box p {
+    font-size: 1.2rem;
+    color: #ddd;
+    text-align: justify;
+}
+     #backToTop {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    background-color: #f5a623;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #ffd700;
+    transform: scale(1.1);
+}
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Qelzu Website</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="friend.html">Friends</a>
+            <div class="dropdown">
+                <a href="education.html">Education</a>
+                <div class="dropdown-content">
+                    <a href="education.html#primary-school">Primary School</a>
+                    <a href="education.html#high-school">High School</a>
+                    <a href="education.html#university">University</a>
+                </div>
+            </div>
+            <a href="family.html">Family</a>
+            <a href="sport.html">Sport</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>About Me</h1>
+    </header>
+
+   <section>
+    <div class="about-box" style="display: flex; align-items: center; gap: 1.5rem;">
+        <!-- Image Section -->
+        <div>
+            <img src="image/aqil5.jpg" alt="Aqil's Picture" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        </div>
+        <p><b>Assalamualaikum</b>, <br>
+            Hi, my name is Aqil Izuddin. I am 20 years old, single, and currently living in Bagan Serai, Perak. I am studying Information Management at UITM Kedah, currently in my 5th semester. <br>
+            In addition to my studies, I enjoy exploring new technologies, staying active through sports, and spending time with my family and friends. I believe in continious self improvement and am always looking for new opportunities to challenge myself and develop new skills.
+<br><br>
+<b>Contact Detail</b>
+<br>
+<b>&#8226;Address</b> : No.24, Parit Haji Taib 1, 34300 Bagan Serai Perak<br>
+<b>&#8226;Phone No</b> : 0175694504<br>
+<b>&#8226;Email</b> : aqil.izu69@gmail.com
+
+
+  	
+        </p>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-section">
+        <h2>My Introduction Video</h2>
+        <video controls>
+            <source src="video/abt1.MOV" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+
+    <footer>
+        <p>&copy;2024 Aqil's Personal Website. All Rights Reserved.</p>
+    </footer>
+</footer>
+  <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">↑</button>
+    <script>
+        const backToTopButton = document.getElementById("backToTop");
+
+        // Show the button when scrolling down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+
+        // Smooth scroll to the top when the button is clicked
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</footer>
+</body>
+</html>
+
